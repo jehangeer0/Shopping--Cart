@@ -1,0 +1,66 @@
+.sizeButton {
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: rgb(231, 231, 231);
+  font-weight: 300;
+  cursor: pointer;
+  border: 1px solid rgb(231, 231, 231);
+  color: rgb(6, 6, 6);
+}
+.sizePara {
+  margin-top: 20px;
+  width: 220px;
+}
+.sizeButton:hover {
+  border: 1px solid black;
+}
+.linkSizes {
+  margin-top: 20px;
+  text-decoration: underline;
+  color: blue;
+  font-size: 20px;
+  width: 220px;
+}
+.allcheckButtons {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+  /* margin-left: 10px; */
+  width: 220px;
+}
+.sizeButton span {
+  font-size: large;
+  /* font-weight: bold; */
+  cursor: pointer;
+  display: block;
+  margin-top: 4px;
+}
+.sizeButton2 {
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: black;
+  font-weight: 400;
+  cursor: pointer;
+  color: white;
+  border: 1px solid black;
+}
+@media only screen and (max-width: 1140px) {
+  .sizePara {
+    display: none;
+  }
+  .linkSizes {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1140px) {
+  .allcheckButtons {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+  }
+}

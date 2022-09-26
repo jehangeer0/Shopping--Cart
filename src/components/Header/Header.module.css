@@ -1,0 +1,56 @@
+.headerContainer {
+  display: flex !important;
+  width: 85%;
+  z-index: 0;
+  /* background-color: gainsboro; */
+}
+.headerHeading1 {
+  align-items: center;
+  text-align: center;
+  letter-spacing: 5px;
+  color: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+}
+.sizeList {
+  width: 50%;
+}
+.flexProductCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  /* background-color: rgb(151, 171, 171); */
+  /* row-gap: 20px; */
+}
+.productListHeading {
+  margin-left: 50px;
+}
+.mobileSizeList {
+  display: none;
+}
+@media only screen and (max-width: 1140px) {
+  .sizeList {
+    display: none;
+  }
+  .mobileSizeList {
+    display: block;
+    text-align: center;
+    align-items: center;
+  }
+  .mobileSizeList {
+    display: flex;
+    justify-content: center;
+  }
+  .mobileSizeList h3 {
+    display: none;
+  }
+}

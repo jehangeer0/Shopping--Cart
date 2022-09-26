@@ -1,0 +1,30 @@
+.container {
+  position: fixed;
+  right: 0;
+  top: 2px;
+  background-color: black;
+  width: 55px;
+  height: 58px;
+  text-align: center;
+  padding: 7px;
+  position: absolute;
+  margin-right: 3px;
+  position: fixed;
+}
+
+.Navbar {
+  height: 70px;
+  width: 100%;
+  cursor: pointer;
+}
+.cartIcon {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(255, 150, 23);
+  border-radius: 50%;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  margin-left: 20px;
+  margin-top: -14px;
+}
