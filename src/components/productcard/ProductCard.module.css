@@ -15,6 +15,9 @@
   margin-top: 15px;
   border: transparent;
 }
+/* .cartButton:focus {
+  background-color: rgb(222, 183, 10) !important;
+} */
 .yellowBorder {
   border: 1px solid orange;
   width: 40px;

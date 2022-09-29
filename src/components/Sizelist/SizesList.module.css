@@ -13,6 +13,10 @@
   margin-top: 20px;
   width: 220px;
 }
+.sizeFixed {
+  position: fixed;
+  margin-top: 30px;
+}
 .sizeButton:hover {
   border: 1px solid black;
 }

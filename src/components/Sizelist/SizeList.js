@@ -1,9 +1,37 @@
 import * as React from "react";
 import classes from "./SizesList.module.css";
+import Paper from "@mui/material/Paper";
+import InputBase from "@mui/material/InputBase";
+import Divider from "@mui/material/Divider";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import SearchIcon from "@mui/icons-material/Search";
+import DirectionsIcon from "@mui/icons-material/Directions";
+import Productdata from "../productData/Productdata";
 
 const SizeList = ({ filters, setFilters, changeHandler }) => {
   return (
-    <>
+    <div className={classes.sizeFixed}>
+      <Paper
+        component="form"
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          width: 250,
+          marginTop: 1,
+          marginBottom: 8,
+        }}
+      >
+        <InputBase
+          sx={{ ml: 1, flex: 1 }}
+          placeholder="Search Products"
+          inputProps={{ "aria-label": "Search Products" }}
+        />
+        <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+        <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
+          <SearchIcon color="secondary" />
+        </IconButton>
+      </Paper>
       <h3>Sizes </h3>
       <div className={classes.allcheckButtons}>
         {filters.map((item, index) => (
@@ -24,7 +52,7 @@ const SizeList = ({ filters, setFilters, changeHandler }) => {
       <div className={classes.linkSizes}>
         <a href="https://github.com/jehangeer0">Star</a>
       </div>
-    </>
+    </div>
   );
 };
 

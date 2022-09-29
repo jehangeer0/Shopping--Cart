@@ -81,6 +81,7 @@ const Header = () => {
     setProduct(filteredData.length > 0 ? filteredData : Productdata);
     setFilters(data);
   };
+  const [searchTerm, setSearchTerm] = React.useState("");
 
   return (
     <>

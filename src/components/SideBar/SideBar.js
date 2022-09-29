@@ -51,6 +51,7 @@ const SideBar = ({ showHandler }) => {
   }, [products]);
   const handelCheckout = () => {
     alert(`Checkout - Subtotal: $ ${total}`);
+    setProducts([]);
   };
   return (
     <Grow in={open} {...(open ? { timeout: 1000 } : {})}>
