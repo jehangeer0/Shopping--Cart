@@ -5,7 +5,7 @@ import Image from "next/image";
 import SideBar from "../SideBar/SideBar";
 import { useProductsContext } from "../../context/productsContext";
 
-const Navbar = ({ showHandler, showsideBar }) => {
+const Navbar = ({ showHandler, showsideBar, setshoesideBar }) => {
   const { products, setProducts } = useProductsContext();
   return (
     <div className={classes.Navbar}>
@@ -21,7 +21,11 @@ const Navbar = ({ showHandler, showsideBar }) => {
           </div>
         </div>
       </Container>
-      <div>{showsideBar && <SideBar showHandler={showHandler} />}</div>
+      <div>
+        {showsideBar && (
+          <SideBar showHandler={showHandler} setshoesideBar={setshoesideBar} />
+        )}
+      </div>
     </div>
   );
 };

@@ -53,18 +53,28 @@
   color: white;
   border: 1px solid black;
 }
-@media only screen and (max-width: 1140px) {
+@media only screen and (max-width: 1367px) {
   .sizePara {
     display: none;
   }
   .linkSizes {
     display: none;
   }
+  .sizeSearchbar {
+    margin-top: 130px;
+    margin-left: 70px;
+  }
 }
-@media only screen and (max-width: 1140px) {
+@media only screen and (max-width: 1367px) {
   .allcheckButtons {
     width: 400px;
     display: flex;
     justify-content: center;
+  }
+}
+@media only screen and (max-width: 1368px) {
+  .sizeFixed {
+    position: static;
+    margin: auto;
   }
 }

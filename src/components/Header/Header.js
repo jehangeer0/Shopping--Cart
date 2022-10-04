@@ -5,6 +5,9 @@ import ProductCard from "../productcard/ProductCard";
 import SizeList from "../Sizelist/SizeList";
 import Productdata from "../productData/Productdata";
 import { useProductsContext } from "../../context/productsContext";
+// import Checkoutdisplay from "../CheckOutoutput/Checkoutdisplay";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // import { Alert } from "@mui/material";
 
 const Header = () => {
@@ -13,7 +16,7 @@ const Header = () => {
     let flag = true;
     products.forEach((val) => {
       if (val.id === id) {
-        alert("Already Exist ! you can add More Items from Cart ..");
+        toast.success("Already exist: Go to cart for add more products");
         flag = false;
       }
     });
@@ -63,6 +66,7 @@ const Header = () => {
     },
   ]);
   const [product, setProduct] = React.useState(Productdata);
+  const [value, setValue] = React.useState("");
   const changeHandler = (index) => {
     debugger;
     const data = [...filters];
@@ -81,13 +85,28 @@ const Header = () => {
     setProduct(filteredData.length > 0 ? filteredData : Productdata);
     setFilters(data);
   };
-  const [searchTerm, setSearchTerm] = React.useState("");
+  React.useEffect(() => {
+    if (value === "") {
+      setProduct(Productdata);
+      return;
+    }
+    const data = Productdata.filter((val) => {
+      return value.length > 1
+        ? val.productDesc.toLocaleLowerCase().includes(value)
+        : val.productDesc.split(" ")[0].toLowerCase()[0].includes(value);
+    });
+    setProduct(data);
+  }, [value]);
 
   return (
     <>
       <h1 className={classes.headerHeading1}>Shopping Cart</h1>
       <div className={classes.mobileSizeList}>
-        <SizeList changeHandler={changeHandler} filters={filters} />
+        <SizeList
+          changeHandler={changeHandler}
+          filters={filters}
+          setValue={setValue}
+        />
       </div>
 
       <Container maxWidth="1300px" className={classes.headerContainer}>
@@ -96,9 +115,10 @@ const Header = () => {
             changeHandler={changeHandler}
             filters={filters}
             setFilters={setFilters}
+            setValue={setValue}
           />
         </div>
-        <div>
+        <div className={classes.allproductData}>
           <h4 className={classes.productListHeading}>
             {product.length} Product(s) Found
           </h4>
@@ -122,6 +142,18 @@ const Header = () => {
           </div>
         </div>
       </Container>
+      {/* <Checkoutdisplay /> */}
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </>
   );
 };

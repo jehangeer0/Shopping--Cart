@@ -5,9 +5,12 @@ import CloseIcon from "@mui/icons-material/Close";
 import SideBarCards from "../Sidebarcards/SideBarCards";
 import { useProductsContext } from "../../context/productsContext";
 import { Fade, Grow } from "@mui/material";
+import CheckoutModal from "./CheckOutoutput/Checkoutdisplay";
 
-const SideBar = ({ showHandler }) => {
+const SideBar = ({ showHandler, setshoesideBar }) => {
   const [total, setTotal] = React.useState(0);
+  const [checkoutModal, setCheckoutModal] = React.useState(false);
+  const [state, setState] = React.useState("");
   const { products, setProducts } = useProductsContext();
 
   const handleClose = (id) => {
@@ -50,8 +53,9 @@ const SideBar = ({ showHandler }) => {
     setTotal(price.toFixed(2));
   }, [products]);
   const handelCheckout = () => {
-    alert(`Checkout - Subtotal: $ ${total}`);
+    setCheckoutModal(true);
     setProducts([]);
+    setState(total);
   };
   return (
     <Grow in={open} {...(open ? { timeout: 1000 } : {})}>
@@ -94,9 +98,15 @@ const SideBar = ({ showHandler }) => {
             <span style={{ color: "orange" }}>${total}</span>
           </div>
           <button className={classes.subtotalButton} onClick={handelCheckout}>
-            CheckOut
+            CHECKOUT
           </button>
         </div>
+        <CheckoutModal
+          total={state}
+          open={checkoutModal}
+          setOpen={setCheckoutModal}
+          setshoesideBar={setshoesideBar}
+        />
       </div>
     </Grow>
   );

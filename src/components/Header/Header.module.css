@@ -5,19 +5,10 @@
   /* background-color: gainsboro; */
 }
 .headerHeading1 {
-  align-items: center;
+  max-width: 300px;
+  margin: auto;
   text-align: center;
-  letter-spacing: 5px;
-  color: linear-gradient(
-    to right,
-    red,
-    orange,
-    yellow,
-    green,
-    blue,
-    indigo,
-    violet
-  );
+  padding-left: 9px;
 }
 .sizeList {
   width: 50%;
@@ -37,10 +28,11 @@
 .mobileSizeList {
   display: none;
 }
-@media only screen and (max-width: 1140px) {
+@media only screen and (max-width: 1367px) {
   .sizeList {
     display: none;
   }
+
   .mobileSizeList {
     display: block;
     text-align: center;
@@ -49,8 +41,15 @@
   .mobileSizeList {
     display: flex;
     justify-content: center;
+    margin-top: -120px;
   }
   .mobileSizeList h3 {
     display: none;
+  }
+  .allproductData {
+    margin-top: 150px;
+  }
+  .headerContainer {
+    margin-top: -80px;
   }
 }

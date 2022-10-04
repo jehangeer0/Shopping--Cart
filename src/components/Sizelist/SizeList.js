@@ -6,13 +6,15 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-import DirectionsIcon from "@mui/icons-material/Directions";
-import Productdata from "../productData/Productdata";
+// import DirectionsIcon from "@mui/icons-material/Directions";
+// import Productdata from "../productData/Productdata";
 
-const SizeList = ({ filters, setFilters, changeHandler }) => {
+const SizeList = ({ filters, setFilters, changeHandler, setValue }) => {
+  const [state, setState] = React.useState("");
   return (
     <div className={classes.sizeFixed}>
       <Paper
+        className={classes.sizeSearchbar}
         component="form"
         sx={{
           display: "flex",
@@ -26,9 +28,20 @@ const SizeList = ({ filters, setFilters, changeHandler }) => {
           sx={{ ml: 1, flex: 1 }}
           placeholder="Search Products"
           inputProps={{ "aria-label": "Search Products" }}
+          // value={state}
+          onChange={(event) => {
+            setValue(event.target.value);
+          }}
         />
         <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-        <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
+        <IconButton
+          type="button"
+          sx={{ p: "10px" }}
+          aria-label="search"
+          onClick={() => {
+            setValue(state);
+          }}
+        >
           <SearchIcon color="secondary" />
         </IconButton>
       </Paper>

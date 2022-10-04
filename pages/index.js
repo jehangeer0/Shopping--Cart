@@ -17,7 +17,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <Navbar showsideBar={showsideBar} showHandler={showHandler} />
+      <Navbar
+        showsideBar={showsideBar}
+        showHandler={showHandler}
+        setshoesideBar={setshoesideBar}
+      />
       <Header showHandler={showHandler} />
     </>
   );
