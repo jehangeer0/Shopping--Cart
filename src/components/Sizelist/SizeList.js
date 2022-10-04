@@ -15,7 +15,6 @@ const SizeList = ({ filters, setFilters, changeHandler, setValue }) => {
     <div className={classes.sizeFixed}>
       <Paper
         className={classes.sizeSearchbar}
-        component="form"
         sx={{
           display: "flex",
           alignItems: "center",
