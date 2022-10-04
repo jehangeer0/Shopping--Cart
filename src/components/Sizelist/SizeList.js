@@ -30,6 +30,7 @@ const SizeList = ({ filters, setFilters, changeHandler, setValue }) => {
           // value={state}
           onChange={(event) => {
             setValue(event.target.value);
+            setState(event.target.value);
           }}
         />
         <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
