@@ -41,7 +41,7 @@
   .mobileSizeList {
     display: flex;
     justify-content: center;
-    margin-top: -120px;
+    margin-top: 10px !important;
   }
   .mobileSizeList h3 {
     display: none;
